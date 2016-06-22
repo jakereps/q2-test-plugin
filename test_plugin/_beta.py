@@ -7,11 +7,18 @@
 # ----------------------------------------------------------------------------
 
 from time import sleep
+import sys
 
 import biom
 
 
-def blocking_test_function(table: biom.Table, timeout: int,
-                           axis: str='sample') -> biom.Table:
+def blocking_test(timeout: int) -> None:
     sleep(timeout)
-    return table.norm(axis=axis, inplace=False)
+    return None
+
+
+def stdio_test(number: int) -> None:
+    for i in range(number):
+        print('%d: This is a stdout test...' % (i))
+        print('%d: This is a stderr test...' % (i), file=sys.stderr)
+    return None
