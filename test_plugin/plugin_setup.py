@@ -18,20 +18,21 @@ plugin = Plugin(
     package='test_plugin'
 )
 
-plugin.register_function(
+plugin.methods.register_function(
     function=test_plugin.blocking_test,
     inputs={},
     parameters={'timeout': Int},
     outputs=[],
     name='Blocking test',
-    doc='Set a timeout for this script to run, then try to run more things!'
+    description='Set a timeout for this script to run, '
+                'then try to run more things!'
 )
 
-plugin.register_function(
+plugin.methods.register_function(
     function=test_plugin.stdio_test,
     inputs={},
     parameters={'number': Int},
     outputs=[],
     name='stdout and stderr test',
-    doc='Given a number n, print to stdout and stderr n times.'
+    description='Given a number n, print to stdout and stderr n times.'
 )
