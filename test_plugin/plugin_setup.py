@@ -20,9 +20,9 @@ plugin = Plugin(
 
 plugin.methods.register_function(
     function=test_plugin.blocking_test,
-    inputs={},
+    inputs={'table': FeatureTable[Frequency]},
     parameters={'timeout': Int},
-    outputs=[],
+    outputs=[('rarefied_table', FeatureTable[Frequency])],
     name='Blocking test',
     description='Set a timeout for this script to run, '
                 'then try to run more things!'
@@ -30,9 +30,9 @@ plugin.methods.register_function(
 
 plugin.methods.register_function(
     function=test_plugin.stdio_test,
-    inputs={},
+    inputs={'table': FeatureTable[Frequency]},
     parameters={'number': Int},
-    outputs=[],
+    outputs=[('rarefied_table', FeatureTable[Frequency])],
     name='stdout and stderr test',
     description='Given a number n, print to stdout and stderr n times.'
 )

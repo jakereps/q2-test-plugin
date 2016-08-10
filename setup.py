@@ -21,6 +21,6 @@ setup(
     license='BSD',
     url='http://www.qiime.org',
     entry_points={
-        'qiime.plugin': ['test-plugin=test_plugin.plugin_setup:plugin']
+        'qiime.plugins': ['test-plugin=test_plugin.plugin_setup:plugin']
     }
 )

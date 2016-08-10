@@ -12,13 +12,13 @@ import sys
 import biom
 
 
-def blocking_test(timeout: int) -> None:
+def blocking_test(table: biom.Table, timeout: int) -> biom.Table:
     sleep(timeout)
-    return None
+    return table
 
 
-def stdio_test(number: int) -> None:
+def stdio_test(table: biom.Table, number: int) -> biom.Table:
     for i in range(number):
         print('%d: This is a stdout test...' % (i))
         print('%d: This is a stderr test...' % (i), file=sys.stderr)
-    return None
+    return table
