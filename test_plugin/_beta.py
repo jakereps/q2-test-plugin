@@ -22,3 +22,7 @@ def stdio_test(table: biom.Table, number: int) -> biom.Table:
         print('%d: This is a stdout test...' % (i))
         print('%d: This is a stderr test...' % (i), file=sys.stderr)
     return table
+
+
+def defaults_test(table: biom.Table, timeout: int = 5) -> biom.table:
+    return table

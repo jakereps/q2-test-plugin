@@ -6,8 +6,8 @@
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-from ._beta import blocking_test, stdio_test
+from ._beta import blocking_test, stdio_test, defaults_test
 
-__version__ = '0.0.1'
+__version__ = '0.0.4'
 
-__all__ = ['blocking_test', 'stdio_test']
+__all__ = ['blocking_test', 'stdio_test', 'defaults_test']

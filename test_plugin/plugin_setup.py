@@ -36,3 +36,12 @@ plugin.methods.register_function(
     name='stdout and stderr test',
     description='Given a number n, print to stdout and stderr n times.'
 )
+
+plugin.methods.register_function(
+    function=test_plugin.defaults_test,
+    inputs={'table': FeatureTable[Frequency]},
+    parameters={'timeout': Int},
+    outputs=[('rarefied_table', FeatureTable[Frequency])],
+    name='Defaults Test',
+    description='See if the defaults auto-populate where they should.'
+)

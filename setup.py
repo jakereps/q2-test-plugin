@@ -8,9 +8,11 @@
 
 from setuptools import setup, find_packages
 
+import test_plugin
+
 setup(
     name='test-plugin',
-    version='0.0.3',
+    version=test_plugin.__version__,
     packages=find_packages(),
     install_requires=['scikit-bio >= 0.4.2',
                       'qiime >= 2.0.0', 'q2-types'],
