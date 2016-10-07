@@ -26,3 +26,8 @@ def stdio_test(table: biom.Table, number: int) -> biom.Table:
 
 def defaults_test(table: biom.Table, timeout: int = 5) -> biom.table:
     return table
+
+
+def boolean_test(table: biom.Table, it_worked: bool) -> biom.Table:
+    print(it_worked)
+    return table

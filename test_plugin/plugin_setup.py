@@ -6,7 +6,7 @@
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-from qiime.plugin import Plugin, Int
+from qiime.plugin import Plugin, Int, Bool
 
 import test_plugin
 from q2_types import FeatureTable, Frequency, RelativeFrequency
@@ -32,7 +32,7 @@ plugin.methods.register_function(
     function=test_plugin.stdio_test,
     inputs={'table': FeatureTable[Frequency]},
     parameters={'number': Int},
-    outputs=[('rarefied_table', FeatureTable[Frequency])],
+    outputs=[('same_table', FeatureTable[Frequency])],
     name='stdout and stderr test',
     description='Given a number n, print to stdout and stderr n times.'
 )
@@ -41,7 +41,16 @@ plugin.methods.register_function(
     function=test_plugin.defaults_test,
     inputs={'table': FeatureTable[Frequency]},
     parameters={'timeout': Int},
-    outputs=[('rarefied_table', FeatureTable[Frequency])],
+    outputs=[('same_table', FeatureTable[Frequency])],
     name='Defaults Test',
     description='See if the defaults auto-populate where they should.'
+)
+
+plugin.methods.register_function(
+    function=test_plugin.boolean_test,
+    inputs={'table': FeatureTable[Frequency]},
+    parameters={'it_worked': Bool},
+    outputs=[('same_table', FeatureTable[Frequency])],
+    name='Boolean test',
+    description='See if the booleans work on QIIME Studio'
 )

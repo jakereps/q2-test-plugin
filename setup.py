@@ -20,7 +20,7 @@ setup(
     author='Jorden Kreps',
     author_email='jordenkreps@gmail.com',
     description='Various workflow tests for qiime-studio.',
-    license='BSD',
+    license='BSD-3-Clause',
     url='http://www.qiime.org',
     entry_points={
         'qiime.plugins': ['test-plugin=test_plugin.plugin_setup:plugin']
